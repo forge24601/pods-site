@@ -1,0 +1,46 @@
+<!-- {"title": "Contact", "description": "Contact POD Society by phone, email or Instagram.", "nav": "contact"} -->
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Contact us</h1>
+    <p class="lede">Reach out to learn how we can support you, your loved one, your community or your organization.</p>
+  </div>
+</section>
+
+<section class="band band--white">
+  <div class="wrap split split--top">
+    <ul class="contact-list">
+      <li><b>Phone</b><a href="tel:+14705025982">(470) 502-5982</a></li>
+      <li><b>Email</b><a href="mailto:positiveoutreachdevelopment23@gmail.com">positiveoutreachdevelopment23@gmail.com</a></li>
+      <li><b>Instagram</b><a href="https://www.instagram.com/podmovement23/">@podmovement23</a></li>
+      <li><b>Organization</b>Positive Outreach Development Society, Inc.<br>501(c)(3) nonprofit, EIN 99-2858905</li>
+    </ul>
+    <form class="mail" id="contact-form">
+      <h2>Send a message</h2>
+      <p>This opens your email app with your message filled in.</p>
+      <label for="cf-name">Your name</label>
+      <input id="cf-name" name="name" autocomplete="name" required>
+      <label for="cf-topic">What is this about?</label>
+      <select id="cf-topic" name="topic">
+        <option>I&rsquo;m coming home and need help</option>
+        <option>A loved one is incarcerated (S.I.P.P.)</option>
+        <option>The Reentry Home</option>
+        <option>Volunteering</option>
+        <option>Partnering or hiring</option>
+        <option>Donating</option>
+        <option>Something else</option>
+      </select>
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" required></textarea>
+      <button class="btn" type="submit">Open in email</button>
+    </form>
+  </div>
+</section>
+<script>
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const f = e.target;
+  const subject = encodeURIComponent(f.topic.value + " (from " + f.name.value + ")");
+  const body = encodeURIComponent(f.message.value + "\n\n" + f.name.value);
+  window.location.href = "mailto:positiveoutreachdevelopment23@gmail.com?subject=" + subject + "&body=" + body;
+});
+</script>

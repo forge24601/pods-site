@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | POD Society</title>
+<meta name="description" content="Contact POD Society by phone, email or Instagram.">
+<link rel="icon" href="images/pods-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="images/pods-logo.png" alt=""><span>POD Society<small>Positive Outreach Development Society</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="reentry-home.html">Reentry Home</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a class="btn" href="get-involved.html#donate">Donate</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Contact us</h1>
+    <p class="lede">Reach out to learn how we can support you, your loved one, your community or your organization.</p>
+  </div>
+</section>
+
+<section class="band band--white">
+  <div class="wrap split split--top">
+    <ul class="contact-list">
+      <li><b>Phone</b><a href="tel:+14705025982">(470) 502-5982</a></li>
+      <li><b>Email</b><a href="mailto:positiveoutreachdevelopment23@gmail.com">positiveoutreachdevelopment23@gmail.com</a></li>
+      <li><b>Instagram</b><a href="https://www.instagram.com/podmovement23/">@podmovement23</a></li>
+      <li><b>Organization</b>Positive Outreach Development Society, Inc.<br>501(c)(3) nonprofit, EIN 99-2858905</li>
+    </ul>
+    <form class="mail" id="contact-form">
+      <h2>Send a message</h2>
+      <p>This opens your email app with your message filled in.</p>
+      <label for="cf-name">Your name</label>
+      <input id="cf-name" name="name" autocomplete="name" required>
+      <label for="cf-topic">What is this about?</label>
+      <select id="cf-topic" name="topic">
+        <option>I&rsquo;m coming home and need help</option>
+        <option>A loved one is incarcerated (S.I.P.P.)</option>
+        <option>The Reentry Home</option>
+        <option>Volunteering</option>
+        <option>Partnering or hiring</option>
+        <option>Donating</option>
+        <option>Something else</option>
+      </select>
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" required></textarea>
+      <button class="btn" type="submit">Open in email</button>
+    </form>
+  </div>
+</section>
+<script>
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const f = e.target;
+  const subject = encodeURIComponent(f.topic.value + " (from " + f.name.value + ")");
+  const body = encodeURIComponent(f.message.value + "\n\n" + f.name.value);
+  window.location.href = "mailto:positiveoutreachdevelopment23@gmail.com?subject=" + subject + "&body=" + body;
+});
+</script>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="images/pods-logo.png" alt="POD Society">
+        <p>Positive Outreach Development Society, Inc. is a 501(c)(3) nonprofit working to end recidivism through
+        mentorship, cognitive programming, reentry support and community partnership.</p>
+      </div>
+      <div>
+        <h2>Programs</h2>
+        <ul>
+          <li><a href="forge.html">FORGE</a></li>
+          <li><a href="reentry-home.html">Reentry Home</a></li>
+          <li><a href="successful-reentry.html">FORGE Successful Reentry</a></li>
+          <li><a href="job-skills.html">Job skills classes</a></li>
+          <li><a href="programs.html">All programs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get involved</h2>
+        <ul>
+          <li><a href="get-involved.html#donate">Donate</a></li>
+          <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+          <li><a href="get-involved.html#partner">Partner with us</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+14705025982">(470) 502-5982</a></li>
+          <li><a href="mailto:positiveoutreachdevelopment23@gmail.com">positiveoutreachdevelopment23@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/podmovement23/">Instagram: @podmovement23</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">&copy; 2026 Positive Outreach Development Society, Inc. &nbsp;|&nbsp; 501(c)(3) nonprofit &nbsp;|&nbsp; EIN 99-2858905</p>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+</body>
+</html>
