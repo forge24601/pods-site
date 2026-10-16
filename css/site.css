@@ -279,3 +279,10 @@ form.mail .btn { margin-top: 16px; cursor: pointer; }
 .cycle li::before { content: counter(cls); grid-row: span 2; font-family: var(--head); font-weight: 900; font-stretch: 120%;
                     font-size: 1.5rem; line-height: 1.1; color: var(--green); }
 .cycle span { color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- reading list ---------- */
+.books { list-style: none; padding: 0; margin: 0 0 2.4em; border-top: 2px solid var(--ink); }
+.books li { padding: 16px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.books h3 { margin: 0 0 2px; font-size: 1.2rem; }
+.books .by { margin: 0 0 6px; color: var(--green-dark); font-weight: 700; }
+.books p:last-child { margin: 0; color: var(--muted); }
