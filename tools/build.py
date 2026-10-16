@@ -13,15 +13,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
-NAV = [  # (key, label, href)
-    ("home", "Home", "index.html"),
-    ("about", "About", "about.html"),
-    ("programs", "Programs", "programs.html"),
-    ("reentry-home", "Reentry Home", "reentry-home.html"),
-    ("impact", "Impact", "impact.html"),
-    ("events", "Events", "events.html"),
-    ("resources", "Resources", "resources.html"),
-    ("contact", "Contact", "contact.html"),
+NAV = [  # (key, label, href, submenu)
+    ("home", "Home", "index.html", None),
+    ("about", "About", "about.html", None),
+    ("programs", "Programs", "programs.html", None),
+    ("reentry", "FORGE Successful Reentry", "successful-reentry.html", [
+        ("The program", "successful-reentry.html"),
+        ("Program materials", "successful-reentry.html#materials"),
+        ("FORGE Your Success class", "forge-your-success.html"),
+        ("Job skills classes", "job-skills.html"),
+        ("The Reentry Home", "reentry-home.html"),
+    ]),
+    ("impact", "Impact", "impact.html", None),
+    ("events", "Events", "events.html", None),
+    ("resources", "Resources", "resources.html", None),
+    ("contact", "Contact", "contact.html", None),
 ]
 
 HEAD = """<!DOCTYPE html>
@@ -100,6 +106,16 @@ FOOT = """</main>
 """
 
 
+def menu_item(item, current):
+    key, label, href, sub = item
+    here = ' aria-current="page"' if key == current else ""
+    if not sub:
+        return f'      <li><a href="{href}"{here}>{label}</a></li>'
+    links = "".join(f'<li><a href="{h}">{t}</a></li>' for t, h in sub)
+    return (f'      <li class="has-sub"><a href="{href}"{here}>{label}</a>'
+            f'<ul class="sub">{links}</ul></li>')
+
+
 def build():
     pages = sorted(SRC.glob("*.html"))
     for src in pages:
@@ -108,9 +124,7 @@ def build():
         assert m, f"{src.name}: first line must be a metadata comment"
         meta = json.loads(m.group(1))
         body = text[m.end():]
-        menu = "\n".join(
-            f'      <li><a href="{href}"{" aria-current=\"page\"" if key == meta.get("nav") else ""}>{label}</a></li>'
-            for key, label, href in NAV)
+        menu = "\n".join(menu_item(item, meta.get("nav")) for item in NAV)
         title = meta["title"] if meta.get("nav") == "home" else f'{meta["title"]} | POD Society'
         html = HEAD.format(title=title, description=meta["description"], menu=menu) + body + FOOT
         (ROOT / src.name).write_text(html)
