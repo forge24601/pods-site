@@ -272,7 +272,7 @@ form.mail .btn { margin-top: 16px; cursor: pointer; }
 }
 @media print { .site-head, .site-foot, .menu-toggle { display: none; } body { background: #fff; } }
 
-/* ---------- FORGE for Success cycle (a real sequence, so it is numbered) ---------- */
+/* ---------- FORGE Your Success cycle (a real sequence, so it is numbered) ---------- */
 .cycle { list-style: none; padding: 0; margin: 0 0 1em; counter-reset: cls; border-top: 2px solid var(--ink); }
 .cycle li { counter-increment: cls; display: grid; grid-template-columns: 2.4em 1fr; column-gap: 8px; padding: 10px 0;
             border-bottom: 1px solid var(--line); margin: 0; }
