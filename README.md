@@ -19,6 +19,6 @@ site and events).
 index, about, programs, forge, reentry-home, successful-reentry, job-skills, impact, events, resources,
 get-involved, contact.
 
-`reentry-home`, `successful-reentry` and `job-skills` are a preview of the planned Reentry Home and the draft FORGE
-Successful Reentry program. Anything marked with a yellow highlight (`<span class="tbd">`) is a placeholder still to be
-confirmed by POD Society.
+`reentry-home`, `successful-reentry`, `forge-your-success` and `job-skills` describe the POD Reentry Home and its
+program, FORGE Successful Reentry, with its weekly class FORGE Your Success. The program materials (the men's book,
+the facilitator guide and the forms) are built in the forge-build repo and copied to `documents/`.
