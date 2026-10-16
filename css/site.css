@@ -271,3 +271,11 @@ form.mail .btn { margin-top: 16px; cursor: pointer; }
   @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }
 @media print { .site-head, .site-foot, .menu-toggle { display: none; } body { background: #fff; } }
+
+/* ---------- FORGE for Success cycle (a real sequence, so it is numbered) ---------- */
+.cycle { list-style: none; padding: 0; margin: 0 0 1em; counter-reset: cls; border-top: 2px solid var(--ink); }
+.cycle li { counter-increment: cls; display: grid; grid-template-columns: 2.4em 1fr; column-gap: 8px; padding: 10px 0;
+            border-bottom: 1px solid var(--line); margin: 0; }
+.cycle li::before { content: counter(cls); grid-row: span 2; font-family: var(--head); font-weight: 900; font-stretch: 120%;
+                    font-size: 1.5rem; line-height: 1.1; color: var(--green); }
+.cycle span { color: var(--muted); font-size: 0.95rem; }
